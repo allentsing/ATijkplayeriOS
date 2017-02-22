@@ -6,9 +6,7 @@
 
 
 
-注意：由于编译ijkPlayer打出来的静态包超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：https://pan.baidu.com/s/1kV6uymN
-注意：由于编译ijkPlayer打出来的静态包超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：https://pan.baidu.com/s/1kV6uymN
-注意：由于编译ijkPlayer打出来的静态包超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：https://pan.baidu.com/s/1kV6uymN
+特别注意：由于编译ijkPlayer打出来的静态包超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：https://pan.baidu.com/s/1kV6uymN
 
 
 
