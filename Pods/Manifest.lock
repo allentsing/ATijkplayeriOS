@@ -1,0 +1,15 @@
+PODS:
+  - LFLiveKit (2.5)
+  - Masonry (1.0.2)
+
+DEPENDENCIES:
+  - LFLiveKit
+  - Masonry
+
+SPEC CHECKSUMS:
+  LFLiveKit: 4361bd588ae0c9244589119ccdb1c30d14686414
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+
+PODFILE CHECKSUM: 539fc273b7bb9e94e8da6a36f9965904283d23ba
+
+COCOAPODS: 1.0.1

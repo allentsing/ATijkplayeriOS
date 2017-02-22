@@ -1,0 +1,57 @@
+//
+//  ATIjkplayeriOS.pch
+//  ATIjkplayeriOS
+//
+//  Created by 朱航杰 on 2017/2/21.
+//  Copyright © 2017年 童冀. All rights reserved.
+//
+
+#ifndef ATIjkplayeriOS_pch
+#define ATIjkplayeriOS_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+#import <GLKit/GLKit.h>
+
+#ifdef __cplusplus
+//#import <opencv2/opencv.hpp>
+#endif
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
+
+//颜色转换
+#define mRGBColor(r, g, b)         [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define mRGBAColor(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+//屏幕尺寸
+#define SCREEN_WIDTH    ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT   ([[UIScreen mainScreen] bounds].size.height)
+//Color RGB Method
+#define UIColorFromRGB_dec(r,g,b) [UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:1.f]
+#define UIColorFromRGBA_dec(r,g,b,a) [UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:a]
+#define UIColorFromRGB_hex(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0x0000FF))/255.0 \
+alpha:1.0]
+
+#define UIColorFromRGBA_hex(rgbValue, alphaValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0x0000FF))/255.0 \
+alpha:alphaValue]
+
+#define WS(weakSelf) __weak __typeof(&*self) weakSelf = self
+#define STS(strongSefl) __strong __typeof(&*self) strongSelf = self
+
+#define MAS_SHORTHAND
+#import <Masonry/Masonry.h>
+
+
+#endif /* ATIjkplayeriOS_pch */

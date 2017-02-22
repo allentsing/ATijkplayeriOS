@@ -1,0 +1,6 @@
+framework module Pods_ATIjkplayeriOS {
+  umbrella header "Pods-ATIjkplayeriOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
