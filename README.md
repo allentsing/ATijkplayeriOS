@@ -10,8 +10,14 @@
 
 
 
-用法：下载本demo，去我的网盘下载编译好的ijkPlayer的静态包，添加到工程里，在ZHCameraPreviewViewController.m文件里设置拉流或者视频源的URL，
+用法：
+
+下载本demo，去我的网盘下载编译好的ijkPlayer的.framework文件，添加到工程里，在ZHCameraPreviewViewController.m文件里设置拉流或者视频源的URL，
 self.url = [NSURL URLWithString:@"rtsp://192.168.42.1/live"]; 
+
+
+
+不想要全景模式的话只需把这句代码[config projectionMode:MDModeProjectionSphere]替换成[config projectionMode:MDModeProjectionPlaneFull]即可。
 
 
 
