@@ -397,7 +397,7 @@
         
         LFLiveAudioConfiguration * audioConfig = [LFLiveAudioConfiguration defaultConfigurationForQuality:LFLiveAudioQuality_High];
         audioConfig.numberOfChannels = 1;
-        audioConfig.audioSampleRate = LFLiveAudioSampleRate_44100Hz;
+        audioConfig.audioSampleRate = LFLiveAudioSampleRate_48000Hz;
         audioConfig.audioBitrate = LFLiveAudioBitRate_128Kbps;
         
         _session = [[LFLiveSession alloc] initWithAudioConfiguration:audioConfig videoConfiguration:videoConfig captureType:LFLiveInputMaskAll];
@@ -577,9 +577,9 @@ static CGFloat angleOffsetFromPortraitOrientationToOrientation(AVCaptureVideoOri
     
     static CMFormatDescriptionRef format = NULL;
     
-    CMTime time = CMTimeMake(len/2 , 44100);
+    CMTime time = CMTimeMake(len/2 , 48000);
     
-    CMSampleTimingInfo timing = {CMTimeMake(1,44100), time, kCMTimeInvalid };
+    CMSampleTimingInfo timing = {CMTimeMake(1,48000), time, kCMTimeInvalid };
     
     OSStatus error = 0;
     
@@ -609,7 +609,7 @@ static CGFloat angleOffsetFromPortraitOrientationToOrientation(AVCaptureVideoOri
     
     AudioStreamBasicDescription format;
     
-    format.mSampleRate = 44100;
+    format.mSampleRate = 48000;
     
     format.mFormatID = kAudioFormatLinearPCM;
     

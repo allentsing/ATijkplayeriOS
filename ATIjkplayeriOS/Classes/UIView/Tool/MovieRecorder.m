@@ -145,25 +145,28 @@ typedef NS_ENUM( NSInteger, MovieRecorderStatus ) {
 - (void)addAudioTrackWithSourceFormatDescription:(CMFormatDescriptionRef)formatDescription settings:(NSDictionary *)audioSettings
 {
 	if ( formatDescription == NULL ) {
-		@throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"NULL format description" userInfo:nil];
-		return;			
+//		@throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"NULL format description" userInfo:nil];
+//		return;			
 	}
 	
-	@synchronized( self )
-	{
-		if ( _status != MovieRecorderStatusIdle ) {
-			@throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Cannot add tracks while not idle" userInfo:nil];
-			return;
-		}
-		
-		if ( _audioTrackSourceFormatDescription ) {
-			@throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Cannot add more than one audio track" userInfo:nil];
-			return;
-		}
-		
-		_audioTrackSourceFormatDescription = (CMFormatDescriptionRef)CFRetain( formatDescription );
-		_audioTrackSettings = [audioSettings copy];
-	}
+    else {//zhuzhuadd
+        @synchronized( self )
+        {
+            if ( _status != MovieRecorderStatusIdle ) {
+                @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Cannot add tracks while not idle" userInfo:nil];
+                return;
+            }
+            
+            if ( _audioTrackSourceFormatDescription ) {
+                @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Cannot add more than one audio track" userInfo:nil];
+                return;
+            }
+            
+            _audioTrackSourceFormatDescription = (CMFormatDescriptionRef)CFRetain( formatDescription );
+            _audioTrackSettings = [audioSettings copy];
+        }
+    }//zhuzhuadd
+	
 }
 
 - (id<MovieRecorderDelegate>)delegate
