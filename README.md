@@ -6,27 +6,39 @@
 
 
 
-特别注意：由于编译ijkPlayer打出来的.framework文件超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：https://pan.baidu.com/s/1kV6uymN
+特别注意：由于编译ijkPlayer打出来的.framework文件超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：
+https://pan.baidu.com/s/1kV6uymN
 
 
 
 用法：
-
 下载本demo，去我的网盘下载编译好的ijkPlayer的.framework文件，添加到工程里，在ZHCameraPreviewViewController.m文件里设置拉流或者视频源的URL，
-self.url = [NSURL URLWithString:@"rtsp://192.168.42.1/live"]; 
+
+    self.url = [NSURL URLWithString:@"rtsp://192.168.42.1/live"]; 
+
+如果录视频出现音频不对的问题，音频出现的问题，可以去 ZHCameraPreviewViewController.m 文件里找
+
+ - (CMSampleBufferRef)createAudioSample:(void *)audioData frames:(UInt32)len
+
+ - (AudioStreamBasicDescription) getAudioFormat 
+
+这两个方法，根据你的音频来调整相应的参数。如：声道数channels，采样率mSampleRate等等。
 
 
-
-不想要全景模式的话只需把这句代码[config projectionMode:MDModeProjectionSphere]替换成[config projectionMode:MDModeProjectionPlaneFull]即可。
+不想要全景模式的话只需把这句代码
+- [config projectionMode:MDModeProjectionSphere]
+替换成
+- [config projectionMode:MDModeProjectionPlaneFull]
+即可。
 
 
 
 推流的话需要设置推流地址：
-- (void)startLive {
-        LFLiveStreamInfo *streamInfo = [LFLiveStreamInfo new];
-        streamInfo.url = @"rtmp://push1.hongshiyun.net/live/c86f1omm_766a397a";
-        [self.session startLive:streamInfo];
-}
+ - (void)startLive {
+ LFLiveStreamInfo *streamInfo = [LFLiveStreamInfo new];
+ streamInfo.url = @"rtmp://push1.hongshiyun.net/live/c86f1omm_766a397a";
+ [self.session startLive:streamInfo];
+ }
 
 
 欢迎反馈问题，有用的话请给颗星，谢谢。
