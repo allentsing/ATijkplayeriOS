@@ -18,9 +18,11 @@
 特别注意：由于编译ijkPlayer打出来的.framework文件超过了100M，所以没有加到项目工程里一起传到GitHub上，需要各位同学自行去我的百度网盘下载，自行添加到项目里，否则无法运行。网盘地址：
 https://pan.baidu.com/s/1kV6uymN
 
-     |
-     |
-     |
+        |
+        
+        |
+        
+        |
      
 用法：
 
@@ -28,9 +30,11 @@ https://pan.baidu.com/s/1kV6uymN
 
     self.url = [NSURL URLWithString:@"rtsp://192.168.42.1/live"]; 
     
-     |
-     |
-     |
+        |
+        
+        |
+        
+        |
 
 如果录视频出现音频不对的问题，音频出现的问题，可以去 ZHCameraPreviewViewController.m 文件里找
 
@@ -40,9 +44,11 @@ https://pan.baidu.com/s/1kV6uymN
 
 这两个方法，根据你的音频来调整相应的参数。如：声道数channels，采样率mSampleRate等等。
 
-     |
-     |
-     |
+        |
+        
+        |
+        
+        |
 
 不想要全景模式的话只需把这句代码
 - [config projectionMode:MDModeProjectionSphere]
@@ -50,9 +56,11 @@ https://pan.baidu.com/s/1kV6uymN
 - [config projectionMode:MDModeProjectionPlaneFull]
 即可。
 
-     |
-     |
-     |
+        |
+        
+        |
+        
+        |
 
 推流的话需要设置推流地址：
  - (void)startLive {
